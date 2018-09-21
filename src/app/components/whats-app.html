@@ -1,0 +1,22 @@
+<div>
+    <app-what-form 
+    [formVisibility] = "formVisibility"
+    (onToggleForm) = "toggleForm()"
+    (onAddWhat) = "addWhat($event)"
+    >
+    </app-what-form>
+    
+    <app-what-filter
+    [filter] = "filter"
+    (onFilterChange) = "filterChange($event)"
+    >
+
+    </app-what-filter>
+    <app-what-item
+        *ngFor="let what of filteredWhats"
+        [what] = "what"
+        (onToggleWhat) = "toggleWhat($event)"
+        (onRemoveWhat) = "removeWhat($event)"
+        >
+    </app-what-item>
+</div>
